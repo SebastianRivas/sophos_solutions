@@ -1,3 +1,5 @@
+require_relative './logic'
+
 module Web
   module Controllers
     module Trip
