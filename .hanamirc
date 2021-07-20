@@ -1,0 +1,3 @@
+project=sophos_solutions
+test=rspec
+template=erb
