@@ -1,1 +1,50 @@
-<h1>Update Trip</h1>
+<p>Trip Info</p>
+<p>
+  Your trip code is: <%= myTrip["tripCode"] %> <br>
+  Your rider is: <%= myTrip["tripRider"].first_name + ' ' + myTrip["tripRider"].others_names + ' ' + myTrip["tripRider"].first_lastname + ' '  + myTrip["tripRider"].other_lastname %> <br>
+  Your initial position is: <%= '[' + (myTrip["tripInitLatitude"]).to_s + ', ' + (myTrip["tripInitLongitude"]).to_s + ']'%> <br>
+  Your final position is: <%= '[' + (myTrip["tripEndLatitude"]).to_s + ', ' + (myTrip["tripEndLongitude"]).to_s + ']'%> <br>
+  Your initial time is: <%= myTrip["initTime"] %> <br>
+  Your final time is: <%= myTrip["endTime"] %> <br>
+  Your total cost is: <%= (myTrip["tripCost"]).to_s %> <br>
+</p>
+
+<select name="payment_method" id="payment_method" onchange="show_form('payment_method')">
+  <option value="--"> -- </option>
+  <option value="CARD"> CARD </option>
+  <option value="NEQUI"> NEQUI </option>
+</select>
+
+<%=
+  form_for :payment_method, routes.payment_methods_path, method: :post, id: 'account_form', style: 'display:none' do
+
+    text_field :rider_id, id: 'rider_id', value: myTrip["tripRider"].id, type: 'hidden'
+    text_field :trip_cost, id: 'trip_cost', value: myTrip["tripCost"], type: 'hidden'
+    text_field :selected_payment_method, id: 'selected_payment_method', value: 'NEQUI', type: 'hidden'
+
+    text_field :account_number, id: 'account_number', placeholder: 'Account Number'
+
+    submit 'Continue to Pay'
+  end
+%>
+
+<%=
+  form_for :payment_method, routes.payment_methods_path, method: :post, id: 'card_form', style: 'display:none' do
+
+    text_field :rider_id, id: 'rider_id', value: myTrip["tripRider"].id, type: 'hidden'
+    text_field :trip_cost, id: 'trip_cost', value: myTrip["tripCost"], type: 'hidden'
+    text_field :selected_payment_method, id: 'selected_payment_method', value: 'CARD', type: 'hidden'
+
+    text_field :credit_card_number, id: 'credit_card_number', placeholder: 'Credit Card Number'
+    text_field :month_expiration, id: 'month_expiration', placeholder: 'Month of Expiration'
+    text_field :year_expiration, id: 'year_expiration', placeholder: 'Year of Expiration'
+    text_field :cvc, id: 'cvc', placeholder: 'CVC'
+    text_field :owner, id: 'owner', placeholder: 'Owner'
+
+    submit 'Continue to Pay'
+  end
+%>
+
+<a href="<%= routes.trips_path %>">Dashboard</a>
+
+<%= javascript 'logic' %>

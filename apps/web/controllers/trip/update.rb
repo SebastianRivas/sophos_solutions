@@ -5,8 +5,11 @@ module Web
     module Trip
       class Update
         include Web::Action
+        expose :myTrip
 
         def call(params)
+          myLogic = Logic.new
+          @myTrip = myLogic.update_trip(params[:id])
         end
       end
     end
