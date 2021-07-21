@@ -8,23 +8,23 @@ How to run the project:
 
 + Install the next dependencies:
 
-+ + postgresql
+  + postgresql
 ```
 sudo apt-get install postgresql*
 ```
-2.apache
+  + apache
 ```
 sudo apt-get install apache2
 ```
-3.ruby
+  + ruby
 ```
 sudo apt-get install ruby2.7
 ```
-3.hanami
+  + hanami
 ```
 sudo gem install hanami
 ```
-4.git
+  + git
 ```
 sudo apt-get install git
 ```
