@@ -34,7 +34,7 @@ sudo apt-get install git
 sudo gem update
 ```
 
-+ Prepare Data Base
++ Prepare the database
 ```
 sudo -u postgres psql
 
@@ -50,9 +50,22 @@ cd sophos_solutions
 bundle install
 ```
 
-+ Set up data base
++ Setup the database
 ```
 bundle exec hanami db prepare
 ```
 
 + Run seeders
+```
+psql -f seeder.sql sophos_development_db
+```
+
++ Run the app
+```
+bundle exec hanami server
+```
+
++ open the browser of your choice and enter the following IP address
+```
+http://127.0.0.1:2300/trip
+```
