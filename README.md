@@ -65,7 +65,7 @@ psql -f seeder.sql sophos_development_db
 bundle exec hanami server
 ```
 
-+ open the browser of your choice and enter the following IP address
++ Open the browser of your choice and enter the following IP address
 ```
 http://127.0.0.1:2300/trip
 ```
