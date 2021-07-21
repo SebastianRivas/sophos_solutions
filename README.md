@@ -6,25 +6,25 @@ Welcome to Sophos Solution Trips project!
 
 How to run the project:
 
-+ Install the next dependencies:
+# Install the next dependencies:
 
-  + postgresql
++ postgresql
 ```
 sudo apt-get install postgresql*
 ```
-  + apache
++ apache
 ```
 sudo apt-get install apache2
 ```
-  + ruby
++ ruby
 ```
 sudo apt-get install ruby2.7
 ```
-  + hanami
++ hanami
 ```
 sudo gem install hanami
 ```
-  + git
++ git
 ```
 sudo apt-get install git
 ```
