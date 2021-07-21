@@ -1,7 +1,7 @@
 function current_position() {
   navigator.geolocation.getCurrentPosition(function(position){
-    document.getElementById('latitude').value = (position.coords.latitude).toFixed(6);
-    document.getElementById('longitude').value = (position.coords.longitude).toFixed(6);
+    document.getElementById('latitude').value = (position.coords.latitude).toFixed(3);
+    document.getElementById('longitude').value = (position.coords.longitude).toFixed(3);
   });
 }
 

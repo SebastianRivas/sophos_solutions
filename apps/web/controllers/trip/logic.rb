@@ -11,7 +11,7 @@ module Web
     			def random_position
     				randomLatitute = rand() * (180 - (-180)) + (-180)
     				randomLongitude = rand() * (180 - (-180)) + (-180)
-    				myPosition = {:latitude => randomLatitute.round(6), :longitude => randomLongitude.round(6)}
+    				myPosition = {:latitude => randomLatitute.round(3), :longitude => randomLongitude.round(3)}
 
     				return myPosition
     			end
