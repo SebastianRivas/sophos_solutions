@@ -8,7 +8,7 @@ How to run the project:
 
 + Install the next dependencies:
 
-++ postgresql
++ + postgresql
 ```
 sudo apt-get install postgresql*
 ```
