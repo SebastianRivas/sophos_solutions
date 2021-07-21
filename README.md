@@ -71,3 +71,8 @@ http://127.0.0.1:2300/trip
 ```
 
 ## Run the test
+```
+HANAMI_ENV=test bundle exec hanami db prepare
+psql -f seeder.sql sophos_test_db
+bundle exec hanami server
+```
