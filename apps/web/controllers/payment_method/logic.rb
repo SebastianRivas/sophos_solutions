@@ -46,7 +46,7 @@ module Web
           def transaction(amount, customer_email, payment_source_id)
             response = HTTP.auth('Bearer prv_test_7SABWjV4il2GJMr9CMeWT8HdrjsGQnDk').post("https://sandbox.wompi.co/v1/transactions", :json => { :amount_in_cents => (amount).to_i, :currency => "COP", :customer_email => customer_email, :reference => payment_reference, :payment_source_id => payment_source_id })
             myTransaction = response.status
-            
+
             return myTransaction
           end
 
@@ -61,16 +61,17 @@ module Web
           end
 
           def create_payment_method(payment_vars)
+
             myAcceptanceToken = acceptance_token
             payment_type = payment_vars[:selected_payment_method]
 
             myRider = HumanRepository.new.find(payment_vars[:rider_id])
             myPaymentMethodType = payment_method_type(payment_vars[:selected_payment_method])
 
-            if payment_type == 'CARD'
+            if payment_type == "CARD"
               myToken = card_token(payment_vars[:credit_card_number], payment_vars[:month_expiration], payment_vars[:year_expiration], payment_vars[:cvc], payment_vars[:owner])
               myPaymentSourse = payment_source('CARD', myToken, myRider.e_mail, myAcceptanceToken)
-            elsif payment_type == 'NEQUI'
+            elsif payment_type == "NEQUI"
               myToken = account_token(payment_vars[:account_number])
               myPaymentSourse = payment_source('NEQUI', myToken, myRider.e_mail, myAcceptanceToken)
             end

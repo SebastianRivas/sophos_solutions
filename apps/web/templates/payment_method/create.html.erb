@@ -1,5 +1,5 @@
 <% if myPaymentMethod.to_s == '201 Created' %>
     <h1> successful transaction </h1>
 <% elsif %>
-    <h1> error in transaction please contact the bank </h1>
+    <h1> <%= myPaymentMethod.to_s %> </h1>
 <% end %>
