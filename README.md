@@ -2,13 +2,13 @@
 
 Welcome to Sophos Solution Trips project!
 
-## Setup
+## Setup the app
 
 How to run the project:
 
 + Install the next dependencies:
 
-1.postgresql
+++ postgresql
 ```
 sudo apt-get install postgresql*
 ```
