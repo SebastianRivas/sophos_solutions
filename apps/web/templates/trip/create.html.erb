@@ -1,0 +1,6 @@
+<p>Trip Info</p>
+<p>
+  Your trip code is: <%= myTrip["tripCode"] %> <br>
+  Your driver is: <%= myTrip["tripDriver"].first_name + ' ' + myTrip["tripDriver"].others_names + ' ' + myTrip["tripDriver"].first_lastname + ' '  + myTrip["tripDriver"].other_lastname %> <br>
+</p>
+<a href="<%= routes.trips_path %>">Dashboard</a>

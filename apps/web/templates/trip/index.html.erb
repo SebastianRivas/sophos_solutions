@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-6">
-    <button type="button" onclick="showDiv()">Rider Dashboard</button>
+    <button type="button" onclick="show_form('rider')" id="rider_action">Rider Dashboard</button>
   </div>
 
   <div class="col-6">
-    <button type="button" onclick="showDiv()">Driver Dashboard</button>
+    <button type="button" onclick="show_form('driver')" id="driver_action">Driver Dashboard</button>
   </div>
 </div>
 
@@ -12,8 +12,8 @@
   <!-- Init Trip -->
   <%=
     form_for :trip, routes.trips_path, method: :post, id: 'init_form_trip' do
-      text_field :latitude, id: 'latitude', placeholder: 'latitude'
-      text_field :longitude, id: 'longitude', placeholder: 'longitude'
+      text_field :latitude, id: 'latitude', placeholder: 'latitude', readonly: true
+      text_field :longitude, id: 'longitude', placeholder: 'longitude', readonly: true
     submit 'Order Service'
   end
   %>
@@ -22,7 +22,7 @@
 <div class="" id="end_trip" style="display:none">
   <!-- End Trip -->
   <%=
-    form_for :trip, routes.trips_path, method: :patch, id: 'end_form_trip' do
+    form_for :trip, routes.trips_path, method: :patch, id: 'end_form_trip', onsubmit: "load_action()" do
       text_field :trip, id: 'trip', placeholder: 'trip code'
     submit 'End Service'
   end

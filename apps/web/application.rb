@@ -225,7 +225,7 @@ module Web
         frame-ancestors 'self' 'unsafe-inline' https:;
         base-uri 'self' 'unsafe-inline' https:;
         default-src 'none';
-        script-src 'self' 'unsafe-inline' https:;
+        script-src 'self' 'unsafe-inline';
         connect-src 'self 'unsafe-inline' https:';
         img-src 'self' https: data:;
         style-src 'self' 'unsafe-inline' https:;
